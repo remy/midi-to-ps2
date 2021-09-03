@@ -1,3 +1,5 @@
+#ifdef PICO
+
 /*
  * ps2dev.cpp - an interface library for ps2 host.
  * limitations:
@@ -49,10 +51,10 @@ void PS2dev::init()
 {
   gpio_init(_ps2clk);
   gpio_init(_ps2data);
-  
+
   gpio_set_dir(_ps2clk, GPIO_OUT);
   gpio_set_dir(_ps2data, GPIO_OUT);
-  
+
   gohi(_ps2clk);
   gohi(_ps2data);
 }
@@ -66,7 +68,7 @@ void PS2dev::init()
 void PS2dev::gohi(int pin)
 {
   gpio_set_function(pin, GPIO_FUNC_SIO);
-//  gpio_set_dir(pin, GPIO_OUT);
+  //  gpio_set_dir(pin, GPIO_OUT);
   gpio_put(pin, 1);
   //  pinMode(pin, INPUT);
   //  digitalWrite(pin, HIGH);
@@ -76,7 +78,7 @@ void PS2dev::golo(int pin)
 {
   gpio_set_function(pin, GPIO_FUNC_SIO);
   gpio_put(pin, 0);
-//  gpio_set_dir(pin, GPIO_OUT);
+  //  gpio_set_dir(pin, GPIO_OUT);
   //  digitalWrite(pin, LOW);
   //  pinMode(pin, OUTPUT);
 }
@@ -441,3 +443,5 @@ int PS2dev::keyboard_pausebreak()
 
   return 0;
 }
+
+#endif
