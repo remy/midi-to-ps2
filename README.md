@@ -6,6 +6,8 @@ The device can connect over PS/2 interface but also USB and announces itself as 
 
 The code should be relatively straight forward to update for your own means if you desire a different mapping.
 
+![](https://github.com/remy/midi-to-ps2/blob/main/.github/PXL_20210926_182004103.jpg?raw=true)
+
 ## Materials
 
 To build this project, the raw components you'll need (and approximate price at time of publishing) are as follow.
